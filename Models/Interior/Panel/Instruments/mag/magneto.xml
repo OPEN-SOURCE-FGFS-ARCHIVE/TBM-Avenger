@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>magneto.ac</path>
+
+  <animation>
+    <object-name>Mag.switch</object-name>
+    <object-name>Mag.base</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Mag.switch</object-name>
+    <property>controls/engines/engine/magnetos</property>
+    <interpolation>
+      <entry><ind> 0.0 </ind><dep>   0 </dep></entry>
+      <entry><ind> 0.5 </ind><dep>  25 </dep></entry>
+      <entry><ind> 1.0 </ind><dep>  50 </dep></entry>
+      <entry><ind> 2.0 </ind><dep>  75 </dep></entry>
+      <entry><ind> 3.0 </ind><dep> 100 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>Mag.switch</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/engines/engine/magnetos</property>
+        <step>1</step>
+        <min>-1</min>
+        <max>3</max>
+        <wrap>false</wrap>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/engines/engine/magnetos</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/sound/click</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>Mag.switch</object-name>
+    <action>
+      <button>1</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/engines/engine/magnetos</property>
+        <step>-1</step>
+        <min>-1</min>
+        <max>3</max>
+        <wrap>false</wrap>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/engines/engine/magnetos</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/sound/click</property>
+      </binding>
+    </action>
+  </animation>
+
+</PropertyList>
+

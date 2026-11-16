@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>flaps.ac</path> 
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>FlapSwitch</object-name>
+    <object-name>FlapPos</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>fond</object-name>
+    <object-name>FlapSwitch</object-name>
+    <object-name>FlapPos</object-name>
+    <emission>
+      <factor-prop>controls/electric/battery-switch</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <property>controls/flight/flaps</property>
+    <object-name>FlapSwitch</object-name>
+    <factor>10</factor>
+    <offset-deg>0</offset-deg>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+    <center>
+      <x-m> -0.39 </x-m>
+      <y-m>  0.00 </y-m>
+      <z-m>  0.00 </z-m>
+    </center>
+  </animation>  
+
+  <animation>
+   <type>rotate</type>
+    <property>surface-positions/flap-pos-norm</property>
+    <object-name>FlapPos</object-name>
+    <factor>10</factor>
+    <offset-deg>0</offset-deg>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+    <center>
+      <x-m> -0.39 </x-m>
+      <y-m>  0.00 </y-m>
+      <z-m>  0.00 </z-m>
+    </center>
+  </animation>  
+
+</PropertyList>
+

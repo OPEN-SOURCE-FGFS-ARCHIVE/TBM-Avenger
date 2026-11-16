@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">Aeronavale, Flottille 9</name>
+            <texture>Liveries/ANFlot9.png</texture>
+
+        </livery>
+    </model>
+</sim>
+</PropertyList>

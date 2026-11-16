@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- GRUMANN TBM Avenger - 2008 Emmanuel BARANGER
+                 updated - 2010 with Melchior's script 
+
+     sources          : http://en.wikipedia.org/wiki/Grumman_TBF_Avenger
+   
+     Manufacturer     : Grumman Aircraft Engineering Co.
+     Wingspan         : 54 ft 02.0 in  ( 16.51 m )
+     Lenght           : 40 ft 11.5 in  ( 12.48 m )
+     Height           : 15 ft 05.0 in  (  4.70 m )
+     Empty Weight     : 10545 lb      (  4783 kg )
+     Max Speed        : 224 kts
+     Cruise speed     : 213 kts
+     Engine           : Wright Cyclone R-2600-20 radial engine 1900 hp
+     Fuel Tank        : Center 884 lbs
+                        Left   559 lbs
+                        Right  570 lbs
+-->
+
+<airplane mass="10545">
+
+  <approach speed="80" aoa="11">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="1"/>
+    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1"/>
+    <control-setting axis="/controls/flight/flaps" value="1"/>
+    <control-setting axis="/controls/gear/gear-down" value="1"/>
+  </approach>
+
+  <cruise speed="238.96" alt="20000">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="1"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="0.7"/>
+    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.4"/>
+    <control-setting axis="/controls/flight/flaps" value="0"/>
+    <control-setting axis="/controls/gear/gear-down" value="0"/>
+  </cruise>
+
+  <cockpit x="2.611" y="0" z="0.756"/>
+
+  <fuselage ax="5.644" ay="0" az="-0.390" bx="-6.154" by="0" bz="0.059" width="1.525" taper="0.5" midpoint="0.3"/>
+
+  <wing x="1.302" y="0.687" z="-0.293" 
+        chord="3.716"
+        length="7.265" 
+        taper="0.37" 
+        dihedral="3" 
+        camber="0.15"
+        sweep="-3">
+        <stall aoa="14" width="4" peak="1.5"/>
+        <flap0 start="0.020" end="0.66" lift="1.9" drag="1.9"/>
+        <flap1 start="0.66" end="0.96" lift="1.8" drag="1.3"/>
+
+        <control-input axis="/controls/flight/flaps" control="FLAP0"/>
+        <control-speed control="FLAP0" transition-time="5"/>
+
+        <control-output control="FLAP0" prop="/surface-positions/flaps-pos-norm"/>
+        
+        <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
+        <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
+
+        <control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
+        <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
+  </wing>
+
+  <hstab x="-5.159" y="0.0" z="0.553" 
+         chord="2.131"
+         length="3.127" 
+         taper="0.60">
+         <stall aoa="14" width="14" peak="1.5"/>
+         <flap0 start="0" end="1" lift="1.75" drag="1.8"/>
+
+         <control-input axis="/controls/flight/elevator" control="FLAP0"/>
+         <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+  </hstab>
+
+  <vstab x="-5.025" y="0.00" z="-0.075" 
+         chord="2.289"
+         length="2.411" 
+         taper="0.40"
+         sweep="4">
+         <stall aoa="16" width="4" peak="1.5"/>
+         <flap0 start="0" end="1" lift="1.3" drag="1.2"/>
+
+         <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
+         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
+  </vstab>
+
+  <!-- Wright Cyclone R-2600-20
+
+                 source       : http://en.wikipedia.org/wiki/Wright_R-2600
+
+                 type         : 14-cylinder supercharged air-cooled two-row radial engine
+                 weight       : 2045 lb  ( 930 kg )
+                 Compression  : 6.9:1
+                 displacement : 2603 in3 ( 42.7 L )
+                 power        : 1900 hp
+  -->
+  <propeller   x="5.438" y="0" z="-0.393"
+               radius="1.88"
+               mass="2045"
+               moment="110"
+               cruise-alt="12000"
+               cruise-power="1500"
+               cruise-speed="213"
+               cruise-rpm="3000"
+               min-rpm="583"
+               max-rpm="3100">
+               <actionpt x="5.809" y="0" z="-0.393"/>
+               <control-input axis="/controls/engines/engine[0]/propeller-pitch" control="ADVANCE" />
+               <piston-engine eng-power="1900"
+                              eng-rpm="3100"
+                              displacement="2603"
+                              compression="6.9">
+                              <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
+                              <control-input axis="/controls/engines/engine[0]/starter" control="STARTER"/>
+                              <control-input axis="/controls/engines/engine[0]/magnetos" control="MAGNETOS"/>
+                              <control-input axis="/controls/engines/engine[0]/mixture" control="MIXTURE"/>
+               </piston-engine>
+  </propeller>
+
+  <gear x="2.381" y="1.578" z="-2.493"
+        compression="0.2"
+        retract-time="7">
+        <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+        <control-speed control="EXTEND" transition-time="6.2"/>
+        <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
+  </gear>
+
+  <gear x="2.381" y="-1.578" z="-2.493"
+        compression="0.2" 
+        retract-time="7">
+        <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+        <control-speed control="EXTEND" transition-time="6"/>
+        <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
+  </gear>
+
+  <gear x="-3.734" y="0.0" z="-1.304"
+        compression="0.2"
+        retract-time="7">
+        <control-input axis="/controls/flight/rudder" control="STEER" src0="-1.0" src1="1.0" dst0=".25" dst1="-.25"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+        <control-speed control="EXTEND" transition-time="7"/>
+        <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
+  </gear>
+
+  <tank x="4.101" y="0" z="-0.355" capacity="884"/>
+  <tank x="1.431" y="2.767" z="-0.355" capacity="559"/>
+  <tank x="1.431" y="-2.767" z="-0.355" capacity="570"/>
+
+  <!-- CG theorique x=1.302 y=0 z=-0.293 -->
+  <ballast x="4.0" y="0.0" z="0.0" mass="1000"/>
+
+</airplane>
+

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+
+    <status>devel 1.1</status>
+    <author>BARANGER Emmanuel, Stuart C</author>
+
+    <fuel-fraction>1.0</fuel-fraction>
+
+    <sound>
+      <audible>true</audible>
+      <path>Aircraft/TBM-Avenger/Sounds/avenger-sound.xml</path>
+    </sound>
+
+    <model>
+      <path>Aircraft/TBM-Avenger/Models/avenger.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+    </model>
+	
+	<systems>
+      <electrical>
+        <path>Aircraft/Generic/generic-electrical.xml</path>
+	  </electrical>
+	  <autopilot>
+        <path>Aircraft/TBM-Avenger/System/autopilot5.xml</path>
+      </autopilot>	
+	</systems>
+	
+
+    <startup>
+      <splash-texture>Aircraft/TBM-Avenger/avenger-splash.png</splash-texture>
+    </startup>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic>
+        <int type="int" n="0">0</int>
+        <int type="int" n="1">0</int>
+        <int type="int" n="2">0</int>
+        <int type="int" n="3">0</int>
+        <int type="int" n="4">0</int>
+        <int type="int" n="5">0</int>
+        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
+      </generic>
+    </multiplay>
+
+    <help>
+      <title>GRUMANN TBM Avenger</title>
+      <key>
+        <name>D</name>
+        <desc>Open/Close bombs bay</desc>
+      </key>
+      <key>
+        <name>E </name>
+        <desc>Open/Close wings</desc>
+      </key>
+    </help>
+
+    <menubar include="Dialogs/avenger-menu.xml"/>
+
+  </sim>
+
+  <engines>
+    <engine n="0">
+      <engine-num type="int">0</engine-num>
+      <running>true</running>
+    </engine>
+  </engines>
+
+  <consumables>
+    <fuel>
+      <tank n="0">
+        <tank-num type="int">0</tank-num>
+        <level-gal_us archive="y">884</level-gal_us>
+      </tank>
+      <tank n="1">
+        <tank-num type="int">1</tank-num>
+        <level-gal_us archive="y">559</level-gal_us>
+      </tank>
+      <tank n="2">
+        <tank-num type="int">2</tank-num>
+        <level-gal_us archive="y">570</level-gal_us>
+      </tank>
+    </fuel>
+  </consumables>
+
+  <input>
+    <keyboard include="Nasal/avenger-keyboard.xml"/>
+  </input>
+
+  <nasal>
+    <doors>
+      <file>Aircraft/TBM-Avenger/Nasal/doors.nas</file>
+    </doors>
+    <avenger>
+      <file>Aircraft/TBM-Avenger/Nasal/liveries.nas</file>
+      <file>Aircraft/TBM-Avenger/Nasal/light.nas</file>
+      <file>Aircraft/TBM-Avenger/Nasal/Electrical.nas</file>
+    </avenger>
+  </nasal>
+
+</PropertyList>
+

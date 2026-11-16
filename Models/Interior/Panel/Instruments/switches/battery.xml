@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>batt.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>Batt.nut</object-name>
+    <object-name>Batt.switch</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>fond</object-name>
+    <object-name>Batt.nut</object-name>
+    <object-name>Batt.switch</object-name>
+    <emission>
+      <factor-prop>controls/electric/battery-switch</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Batt.switch</object-name>
+    <property>controls/electric/battery-switch</property>
+    <factor> 60 </factor>
+    <center>
+      <x-m> 0.002 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.000 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>Batt.nut</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/electric/battery-switch</property>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/electric/engine/generator</property>
+        <property>controls/electric/battery-switch</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/sound/click</property>
+      </binding>
+    </action>
+  </animation>
+
+</PropertyList>
+

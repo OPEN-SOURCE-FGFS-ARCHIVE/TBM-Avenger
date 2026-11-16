@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+   <key n="68">
+    <name>D</name>
+    <desc>Bomber bay</desc>
+    <binding>
+     <command>nasal</command>
+     <script>doors.doorsystem.passengerexport();</script>
+    </binding>
+   </key>
+
+   <key n="100">
+    <name>d</name>
+    <desc>Crew door</desc>
+    <binding>
+     <command>nasal</command>
+     <script>doors.doorsystem.crewexport();</script>
+    </binding>
+   </key>
+
+  <key n="69">
+    <name>E</name>
+    <desc>Wings</desc>
+    <binding>
+     <command>nasal</command>
+     <script>doors.doorsystem.wingsexport();</script>
+    </binding>
+   </key>
+
+<!--
+   <key n="101">
+     <name>e</name>
+     <desc>Guns</desc>
+     <binding>
+       <command>nasal</command>
+       <script>guns.fire_MG()</script>
+     </binding>
+     <mod-up>
+       <binding>
+         <command>nasal</command>
+         <script>guns.stop_MG()</script>
+       </binding>
+     </mod-up>
+   </key>
+-->
+
+</PropertyList>
+

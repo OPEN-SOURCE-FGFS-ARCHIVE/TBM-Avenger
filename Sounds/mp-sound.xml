@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <fx>
+
+    <crank> 
+      <name>engstart</name>
+      <path>Aircraft/TBM-Avenger/Sounds/start.wav</path>
+      <property>engines/engine/cranking</property>
+      <volume> 
+        <property>orientation/alpha-deg</property>
+        <type>log</type>
+        <min>0.5</min>
+        <max>1.0</max>
+      </volume>
+      <volume> 
+        <factor>1.2</factor>
+        <max>1.0</max>
+      </volume>
+    </crank>
+
+    <crank> 
+      <name>cough</name>
+      <path>Aircraft/TBM-Avenger/Sounds/coughing.wav</path>
+      <property>engines/engine/running</property>
+      <volume> 
+        <property>orientation/alpha-deg</property>
+        <type>log</type>
+        <min>0.5</min>
+        <max>1.0</max>
+      </volume>
+      <volume> 
+        <factor>1.2</factor>
+        <max>1.0</max>
+      </volume>
+    </crank>
+
+    <engine> 
+      <name>engineslowrun</name>
+      <mode>looped</mode>
+      <path>Aircraft/TBM-Avenger/Sounds/R-1535Slow.wav</path>
+      <condition> 
+        <property>engines/engine/running</property>
+        <less-than> 
+          <property>engines/engine/rpm</property>
+          <value> 1500 </value>
+        </less-than>
+      </condition>
+      <volume> 
+        <property>orientation/alpha-deg</property>
+        <type>log</type>
+        <min> 1.0 </min>
+        <max> 1.5 </max>
+      </volume>
+      <volume> 
+        <property>sim/current-view/internal</property>
+        <offset>  1.0 </offset>
+        <factor> -0.4 </factor>
+      </volume>
+      <pitch> 
+        <property>engines/engine/rpm</property>
+        <factor> 0.0006 </factor>
+        <min> 0.4 </min>
+        <max> 3.0 </max>
+        <offset> 0 </offset>
+      </pitch>
+    </engine>
+
+    <engine>
+      <name>enginerun</name>
+      <mode>looped</mode>
+      <path>Aircraft/TBM-Avenger/Sounds/R-1535.wav</path>
+      <condition>
+        <property>engines/engine/running</property>
+        <greater-than-equals> 
+          <property>engines/engine/rpm</property>
+          <value> 1500 </value>
+        </greater-than-equals>
+      </condition>
+      <volume>
+        <property>controls/engines/engine/throttle</property>
+        <min> 0.5 </min>
+        <max> 1.0 </max>
+      </volume>
+      <pitch>
+        <property>/engines/engine/rpm</property>
+        <factor> 0.00033 </factor>
+        <min> 0.0 </min>
+        <max> 1.0 </max>
+        <offset> 0.0 </offset>
+      </pitch>
+    </engine>
+
+    
+
+    <squeal>
+      <name>squeal</name>
+      <path>Sounds/squeal.wav</path>
+      <condition>
+        <or>
+          <property>gear/gear[0]/wow</property>
+          <property>gear/gear[1]/wow</property>
+        </or>
+      </condition>
+      <volume>
+        <property>velocities/speed-down-fps</property>
+        <factor> 0.5 </factor>
+        <max> 1.0 </max>
+      </volume>
+      <volume>
+        <property>velocities/airspeed-kt</property>
+        <factor> 0.01 </factor>
+        <max> 1.0 </max>
+      </volume>
+      <volume>
+        <internal>dt_stop</internal>
+        <factor> 0.05 </factor>
+        <max> 1.0 </max>
+      </volume>
+      <pitch>
+        <property>velocities/airspeed-kt</property>
+        <factor> 0.0025 </factor>
+        <offset> 0.5000 </offset>
+        <max> 1.0 </max>
+      </pitch>
+      <position>
+        <x> -1.0 </x>
+        <y>  0.0 </y>
+        <z> -2.0 </z>
+      </position>
+      <reference-dist> 5.0 </reference-dist>
+      <max-dist> 10.0 </max-dist>
+    </squeal>
+
+   
+</fx>
+
+</PropertyList>

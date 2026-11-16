@@ -1,0 +1,16 @@
+<!--
+************************************************************************
+TBM Avenger FDM YASim
+BARANGER Emmanuel                                                   2008
+************************************************************************
+-->
+
+<PropertyList include="avenger-base.xml">
+
+  <sim>
+    <description>GRUMANN TBM Avenger (Yasim)</description>
+    <flight-model>yasim</flight-model>
+    <aero>avenger-yasim</aero>
+  </sim>
+
+</PropertyList>

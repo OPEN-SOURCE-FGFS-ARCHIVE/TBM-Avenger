@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">US Navy, VT-84, USS Bunker Hill</name>
+            <texture>Liveries/USNVT84.png</texture>
+
+        </livery>
+    </model>
+</sim>
+</PropertyList>

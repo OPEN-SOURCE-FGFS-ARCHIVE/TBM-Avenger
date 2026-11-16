@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<!-- <PropertyList include="avenger-jsbsim-cnf.xml"> -->
+<PropertyList include="avenger-yasim-cnf.xml">
+
+  <sim>
+    <description>GRUMANN TBM Avenger</description>
+    <author>Emmanuel BARANGER (3D/FDM), StuartC</author>
+
+	<previews>
+	  <preview>
+		<type>interior</type>
+		<splash type="bool">true</splash>
+		<path>Splash/splash.png</path>
+	  </preview>
+	  <preview>
+		<type>exterior</type>
+		<splash type="bool">true</splash>
+		<path>Splash/splash1.png</path>
+	  </preview>
+	  <preview>
+		<type>exterior</type>
+		<splash type="bool">true</splash>
+		<path>Splash/splash2.png</path>
+	  </preview>
+	  <preview>
+		<type>exterior</type>
+		<splash type="bool">true</splash>
+		<path>Splash/splash3.png</path>
+	  </preview>
+	  <preview>
+		<type>exterior</type>
+		<splash type="bool">true</splash>
+		<path>Splash/splash4.png</path>
+	  </preview>
+	  <preview>
+		<type>exterior</type>
+		<splash type="bool">true</splash>
+		<path>Splash/splash5.png</path>
+	  </preview>
+	</previews>
+
+  </sim>
+
+
+
+</PropertyList>
+

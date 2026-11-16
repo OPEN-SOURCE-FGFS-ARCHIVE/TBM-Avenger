@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>ils.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>VertNeedle</object-name>
+    <object-name>HorizNeedle</object-name>
+
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>VertNeedle</object-name>
+    <object-name>HorizNeedle</object-name>
+    <emission>
+      <factor-prop>controls/electric/battery-switch</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>VertNeedle</object-name>
+    <property>instrumentation/nav[0]/heading-needle-deflection</property>
+    <factor> 2 </factor>
+    <min>  -20 </min>
+    <max>   20 </max>
+    <center>
+      <x-m> 0.00 </x-m>
+      <y-m> 0.00 </y-m>
+      <z-m> 0.03 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>HorizNeedle</object-name>
+    <property>instrumentation/nav[0]/gs-needle-deflection</property>
+    <factor>    2 </factor>
+    <min-deg> -20 </min-deg>
+    <max-deg>  20 </max-deg>
+    <center>
+      <x-m>  0.00 </x-m>
+      <y-m> -0.03 </y-m>
+      <z-m>  0.00 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>
+
